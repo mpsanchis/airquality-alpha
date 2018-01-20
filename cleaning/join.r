@@ -25,11 +25,9 @@ for (i in 1:length(mod_files)){
   names(data) = names(header_mod)
   if (i == 1){
     mod_data = rbind(mod_data, data)
-    mod_data[,day:=as.Date(day)]
     first_date = mod_data$day[1]
     mod_data[,DayType := ifelse(day==first_date,'ConcentrationModSame','ConcentrationModPrev')]
   } else {
-    data[,day:=as.Date(day)]
     first_date = data$day[1]
     data[,DayType := ifelse(day==first_date,'ConcentrationModSame','ConcentrationModPrev')]
     mod_data = rbind(mod_data, data)
