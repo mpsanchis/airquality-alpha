@@ -17,3 +17,6 @@ fd$Verification <- NULL
 fd$DatetimeEnd <- NULL
 fd$DateEnd <- NULL
 fd$TimeEnd <- NULL
+
+# Change name of stations col
+names(fd)[1] <- "Station"
