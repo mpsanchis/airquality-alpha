@@ -20,7 +20,10 @@ setnames(obs_data, 'Concentration', 'ConcentrationObs')
 
 mod_data[,AirPollutant := NULL]
 
-data = merge(obs_data, mod_data, by.x=c('AirQualityStationEoICode','DateBegin','TimeBegin'), by.y=c('code','day','hour'),all.x=T)
+data = merge(obs_data, mod_data, by.x=c('AirQualityStationEoICode','DateBegin','TimeBegin'), by.y=c('code','day','hour'), all.y=T)
+
+data[,`:=`(lat=NULL,lon=NULL,height=NULL)]
+data = merge(data, stations[,.(code,lat,lon,height)], by.x='AirQualityStationEoICode', by.y='code', all.x=T)
 
 write.csv(data, 'data/full_data.csv', row.names = F)
 
