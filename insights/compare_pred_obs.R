@@ -1,10 +1,12 @@
 # THIS SCRIPT PLOTS TWO THINGS:
 # 1- MSE HISTOGRAM: day before and current day predictions
-# 2- MSE EVOLUTION HOUR BY HOUR: day b4 and current day too
-
+# 2- MSE EVOLUTION HOUR BY HOUR: day before and current day too
+#
+# (MSE: mean square error)
+#
 # GLOBAL ANALYSIS: ALL ERRORS -------------------------
 
-# Remove files
+# Remove files from RStudio Environment
 rm(list = ls())
 
 df <- read.csv('clean_data.csv')
@@ -49,5 +51,4 @@ for(i in x_val){
 
 err_both <- rbind(mse_prev, mse_same)
 mp <- barplot(err_both, beside = TRUE, names.arg = 0:23)
-
 

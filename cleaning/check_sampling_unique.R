@@ -1,3 +1,18 @@
+#####
+# This script checks that the columns "SamplingProcess", "SamplingPoint" and "Sample" contain values
+# that are associated with one station only.
+#
+# This means (example) that if there is a row with the station value S1, then the column SamplingProcess
+# has value SPR1 and the column SamplingPoint has value SPT1, and column Sample has the value SM1. These values
+# are different for each station (i.e: station S2 is associated to SamplingProcess SPR2), but are the same in all
+# rows with the same station value
+#
+# Having observed this when the code was executed, we could CONCLUDE that these three columns could be deleted, as
+# the information they provided were redundant with the column "AirQualityStationEoICode" (which was later renamed
+# "Station").
+#####
+
+
 # Filter by Station
 stations <- c('ES0691A', 'ES1396A', 'ES1438A', 'ES1480A', 'ES1679A', 'ES1856A', 'ES1992A')
 

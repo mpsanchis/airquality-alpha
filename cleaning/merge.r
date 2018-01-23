@@ -1,3 +1,7 @@
+# FUNCTION: this code joined the data from the two files in "join.R" to one file: "full_data.csv"
+#
+# ORIGINAL FILES: 'obs_data.csv' and 'mod_data.csv'
+
 # WORKING DIRECTORY ----------------------------------
 setwd("~/Documents/R/airquality-alpha")
 

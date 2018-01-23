@@ -1,5 +1,10 @@
+## MULTIPLE PLOTS TO GET A GENERAL IDEA OF HOW NO2 CONCENTRATION LEVELS VARY IN BARCELONA
+#
+# Variables: prediction error, error variation, NO2 concentration
+# Evolution: hourly, weekly and monthly
+
 # WORKING DIRECTORY ----------------------------------
-setwd("~/Documents/R/airquality-alpha")
+setwd("~/Documentos/airquality-alpha")
 
 # LOAD PACKAGES --------------------------------------
 library(ggplot2)
@@ -67,6 +72,7 @@ aux %>% group_by(Station) %>% ggvis(~month, ~co, stroke=~Station) %>% layer_line
 aux %>% group_by(Station) %>% ggvis(~month, ~cmp, stroke=~Station) %>% layer_lines()
 aux %>% group_by(Station) %>% ggvis(~month, ~cms, stroke=~Station) %>% layer_lines()
 aux %>% group_by(Station) %>% ggvis(~month, ~diff_cocmp, stroke=~Station) %>% layer_lines()
+
 aux %>% group_by(Station) %>% ggvis(~month, ~diff_cocms, stroke=~Station) %>% layer_lines()
 aux %>% group_by(Station) %>% ggvis(~month, ~diff_cmpcms, stroke=~Station) %>% layer_lines()
 

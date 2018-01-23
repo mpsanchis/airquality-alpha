@@ -1,3 +1,4 @@
+# FUNCTION: this code deletes the useless columns in "full_data.csv"
 fd <- read.csv('data/full_data.csv')
 
 fd$Countrycode <- NULL
@@ -18,5 +19,5 @@ fd$DateEnd <- NULL
 fd$TimeEnd <- NULL
 
 fd = data.table(fd)
-setnames(fd, 'AirQualityStationEoICode', 'Station')
+setnames(fd, 'AirQualityStationEoICode', 'Station') # Rename the column containing the station name
 write.csv(fd, 'data/clean_data.csv', row.names = F)
