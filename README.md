@@ -4,12 +4,10 @@ Held at the CCCB, January 20-21 2018. Ex-aequo prize on "creativity and insights
 ### Prerequisites: Software
 Python 3 was used for machine learning. Python packages required by [aiorla](https://github.com/aiorla/) and [mikmik](https://github.com/mr-mikmik):
 ```
-Jupyter
 Pandas
 Sklearn
 Numpy
-Scipy
-Xgboost
+Catboost
 ```
 
 R was used for data manipulation and plotting. Packages required by [jjgarau](https://github.com/jjgarau/) and [mpsanchis](https://github.com/mpsanchis/):
@@ -36,10 +34,6 @@ ggplot2
 │   └── train.py                <- models ??
 │
 │
-├── aitor                       <- ??
-│   └── fakeMean.ipynb          <- model??
-│
-│
 ├── cleaning                    <- First steps (S) made when data was downloaded
 │   ├── check_sampling_unique.R <- S1: Checking that some columns could be deleted
 │   ├── join.r                  <- S2: joining multiple files to 2 files
@@ -55,6 +49,10 @@ ggplot2
 ├── insights                    <- Code that plots/analyzes to extract some information from the data
 │   ├── compare_pred_obs.R      <- Compares predicted NO2 levels with observed NO2 levels
 │   └── data_enrichment.r       <- added features: holiday, day of week, distance to places, etc.
+│
+│
+├── modeling                    <- Algorithms to generate predictions
+│   └── model.py                <- script to create the final submission
 │
 │
 └── plots                       <- Plotting NO2 concentration and pred. error as a function of time
